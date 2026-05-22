@@ -7,7 +7,7 @@ import { classifyIntent, getTrustDelta, getFuseReply } from '../core/classifier.
 import { getCurrentSlot } from '../engine/timeEngine.js';
 
 let apiKey = ''; // 用户填入
-const API_URL = 'https://api.deepseek.com/chat/completions';
+const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
 let messageHistory = [];
 
@@ -98,7 +98,7 @@ export async function sendMessage(userText) {
         'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: 'deepseek-chat',
+        model: 'deepseek/deepseek-chat',
         messages,
         temperature: 0.8,
         max_tokens: 500,
